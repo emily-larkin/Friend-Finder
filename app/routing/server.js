@@ -36,9 +36,9 @@ app.use(express.json());
 
 
 // Routes
-app.get("/", function(req, res) {
-    res.send("Welcome Home!");
-  });
+// app.get("/", function(req, res) {
+//     res.send("Welcome Home!");
+//   });
 
 
 
