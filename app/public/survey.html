@@ -1,12 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=“en”>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset=“UTF-8">
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+    <meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <title>Friend Survey</title>
 </head>
-<body>
-    
-</body>
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span>Friend Finder</h1>
+        <hr>
+        <h2 class="text-center">Take the Survey</h2>
+        <br>
+
+        <div class="text-center">
+            <a href="/api/friends"><button type="button" class="btn btn-lg btn-primary"><span
+                        class="glyphicon glyphicon-list-alt"></span>View Friends</button></a>
+            <a href="/"><button type="button" class="btn btn-lg btn-default"><span
+                        class="glyphicon glyphicon-home"></span></button></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- Survey Page -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Friend Survey</h4>
+                </div>
+                <div class="panel-body">
+
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" id="friend_name">
+                        </div>
+                        <div>
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                Upload a picture of yourself:
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                            </form>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="">What is your favorite color?</label>
+                            <br>
+
+                            <select name="colors" id="friend_color">
+                                <option value="blue">blue</option>
+                                <option value="pink">pink</option>
+                                <option value="yellow">yellow</option>
+                                <option value="green">green</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="">Who is your favorite hero?</label>
+                            <br>
+
+                            <select name="hero" id="friend_hero">
+                                <option value="Superman">Superman</option>
+                                <option value="Thor">Thor</option>
+                                <option value="Batman">Batman</option>
+                                <option value="Antman">Antman</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_fear">
+                            <label for="">What is your biggest fear?</label>
+                            <br>
+                            <select name="fear">
+                                <option value="Spiders">Spiders</option>
+                                <option value="Heights">Heights</option>
+                                <option value="Cars">Cars</option>
+                                <option value="Flights">Flights</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_book">
+                            <label for="">What is your favorite book?</label>
+                            <br>
+                            <select name="book">
+                                <option value="Harry Potter">Harry Potter</option>
+                                <option value="You don't know JS">You don't know JS</option>
+                                <option value="Lessons Learned in Software Testing">Lessons Learned in Software Testing
+                                </option>
+                                <option value="Self Motivational Books">Self Motivational Books</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_activity">
+                            <label for="">Which would you rather do...</label>
+                            <br>
+
+                            <select name="activity">
+                                <option value="Ride a bike">Ride a bike</option>
+                                <option value="Ride a horse">Ride a horse</option>
+                                <option value="Walk">Walk</option>
+                                <option value="Drive a car">Drive a car</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_vacation">
+                            <label for="">Where would you like to vacation?</label>
+                            <br>
+                            <select name="vacation">
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Alaska">Alaska</option>
+                                <option value="California">California</option>
+                                <option value="Japan">Japan</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_shop">
+                            <label for="">How often do you shop?</label>
+                            <br>
+                            <select name="shop">
+                                <option value="Twice a week">Twice a week</option>
+                                <option value="Twice a month">Twice a month</option>
+                                <option value="Once a month">Once a month</option>
+                                <option value="Once a year">Once a year</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_pillows">
+                            <label for="">How many pillows do you sleep with?</label>
+                            <br>
+                            <select name="pillows">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_holiday">
+                            <label for="">What is your favorite holiday</label>
+                            <br>
+                            <select name="holiday">
+                                <option value="Easter">Easter</option>
+                                <option value="Thanksgiving">Thanksgiving</option>
+                                <option value="Christmas">Christmas</option>
+                                <option value="4th of July">4th of July</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group" id="friend_school">
+                            <label for="">What was your favorite subject in school?</label>
+                            <br>
+                            <select name="school">
+                                <option value="English">English</option>
+                                <option value="Math">Math</option>
+                                <option value="Science">Science</option>
+                                <option value="Physical Education">Physical Education</option>
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" id="submit-button" class="btn btn-primary submit">Submit</button>
+                        <br>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/friends">Friends List</a></p>
+        </div>
+    </footer>
+
+    <script>
+        //javascript page
+
+        // constructor
+        function Friends(name, picture, colors, hero, fear, book, activity, vacation, shop, pillows, holiday, school) {
+            this.friendName = name
+            this.picUpload = picture
+            this.colorSurvey = colors
+            this.heroSurvey = hero
+            this.fearSurvey = fear
+            this.bookSurvey = book
+            this.activitySurvey = activity
+            this.vacationSurvey = vacation
+            this.shopSurvey = shop
+            this.pillowsSurvey = pillows
+            this.holidaySurvey = holiday
+            this.schoolSurvey = school
+        }
+
+        $("#submit-button").click(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: "/api/friends",
+                method: "POST",
+                data: new Friends($("#friend_name").val(),
+                    $("#fileToUpload").val(),
+                    $("#friend_color").val(),
+                    $("#friend_hero").val(),
+                    $("#friend_fear").val(),
+                    $("#friend_book").val(),
+                    $("#friend_activity").val(),
+                    $("#friend_vacation").val(),
+                    $("#friend_shop").val(),
+                    $("#friend_pillows").val(),
+                    $("#friend_holiday").val(),
+                    $("#friend_school").val())
+            }).then(function (data) {
+                console.log(data)
+
+                alert("Thanks for taking our friend survey!")
+            })
+        });
+    </script>
+
 </html>
