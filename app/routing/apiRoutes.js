@@ -1,6 +1,5 @@
+var path = require("path");
 var friendData = require("../data/friends.js");
-var home = require("../public/home.html");
-var home = require("../public/survey.html");
 
 module.exports = function (app) {
 
