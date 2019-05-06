@@ -18,9 +18,22 @@
 // }
 
 
-var friends = [];
+var friendsArray = [{
+    friendName: 'rob',
+    picUpload: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg',
+    colorSurvey: '1',
+    heroSurvey: '1',
+    fearSurvey: '1',
+    bookSurvey: '1',
+    activitySurvey: '1',
+    vacationSurvey: '1',
+    shopSurvey: '1',
+    pillowsSurvey: '1',
+    holidaySurvey: '1',
+    schoolSurvey: '1'
+}];
 
-
+module.exports = friendsArray;
 
 
 
@@ -36,4 +49,3 @@ var friends = [];
 //    * The closest match will be the user with the least amount of difference.
 
 
-module.exports = friends;

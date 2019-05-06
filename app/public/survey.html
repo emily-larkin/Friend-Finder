@@ -55,7 +55,6 @@
                         <div class="form-group">
                             <label for="">What is your favorite color?</label>
                             <br>
-
                             <select name="colors" id="friend_color">
                                 <option value="1">blue</option>
                                 <option value="2">pink</option>
@@ -67,7 +66,6 @@
                         <div class="form-group">
                             <label for="">Who is your favorite hero?</label>
                             <br>
-
                             <select name="hero" id="friend_hero">
                                 <option value="1">Superman</option>
                                 <option value="2">Thor</option>
@@ -76,10 +74,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_fear">
+                        <div class="form-group">
                             <label for="">What is your biggest fear?</label>
                             <br>
-                            <select name="fear">
+                            <select name="fear" id="friend_fear">
                                 <option value="1">Spiders</option>
                                 <option value="2">Heights</option>
                                 <option value="3">Cars</option>
@@ -87,10 +85,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_book">
+                        <div class="form-group">
                             <label for="">What is your favorite book?</label>
                             <br>
-                            <select name="book">
+                            <select name="book" id="friend_book">
                                 <option value="1">Harry Potter</option>
                                 <option value="2">You don't know JS</option>
                                 <option value="3">Lessons Learned in Software Testing
@@ -99,11 +97,11 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_activity">
+                        <div class="form-group">
                             <label for="">Which would you rather do...</label>
                             <br>
 
-                            <select name="activity">
+                            <select name="activity" id="friend_activity">
                                 <option value="1">Ride a bike</option>
                                 <option value="2">Ride a horse</option>
                                 <option value="3">Walk</option>
@@ -111,10 +109,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_vacation">
+                        <div class="form-group">
                             <label for="">Where would you like to vacation?</label>
                             <br>
-                            <select name="vacation">
+                            <select name="vacation" id="friend_vacation">
                                 <option value="1">Hawaii</option>
                                 <option value="2">Alaska</option>
                                 <option value="3">California</option>
@@ -122,10 +120,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_shop">
+                        <div class="form-group">
                             <label for="">How often do you shop?</label>
                             <br>
-                            <select name="shop">
+                            <select name="shop" id="friend_shop">
                                 <option value="1">Twice a week</option>
                                 <option value="2">Twice a month</option>
                                 <option value="3">Once a month</option>
@@ -133,10 +131,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_pillows">
+                        <div class="form-group">
                             <label for="">How many pillows do you sleep with?</label>
                             <br>
-                            <select name="pillows">
+                            <select name="pillows" id="friend_pillows">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -144,10 +142,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_holiday">
+                        <div class="form-group">
                             <label for="">What is your favorite holiday</label>
                             <br>
-                            <select name="holiday">
+                            <select name="holiday" id="friend_holiday">
                                 <option value="1">Easter</option>
                                 <option value="2">Thanksgiving</option>
                                 <option value="3">Christmas</option>
@@ -155,10 +153,10 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group" id="friend_school">
+                        <div class="form-group">
                             <label for="">What was your favorite subject in school?</label>
                             <br>
-                            <select name="school">
+                            <select name="school" id="friend_school">
                                 <option value="1">English</option>
                                 <option value="2">Math</option>
                                 <option value="3">Science</option>
@@ -206,7 +204,8 @@
             $.ajax({
                 url: "/api/friends",
                 method: "POST",
-                data: new Friends($("#friend_name").val(),
+                data: new Friends(
+                    $("#friend_name").val(),
                     $("#fileToUpload").val(),
                     $("#friend_color").val(),
                     $("#friend_hero").val(),
@@ -219,8 +218,6 @@
                     $("#friend_holiday").val(),
                     $("#friend_school").val())
             }).then(function (data) {
-                console.log(data)
-
                 alert("Thanks for taking our friend survey!")
             })
         });
