@@ -1,3 +1,5 @@
+var friendsData = require("../data/friends")
+
 // You should save your application's data inside of `app/data/friends.js` as an array of objects. Each of these objects should roughly follow the format below.
 // json
 // {
@@ -91,33 +93,33 @@ module.exports = friendsArray;
 //    * Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both `5-3` and `3-5` as `2`, and so on.
 //    * The closest match will be the user with the least amount of difference.
 
-var bestMatch = {
-    name: "",
-    photo: "",
-    friendDifference: Infinity
-};
+// var bestMatch = {
+//     name: "",
+//     photo: "",
+//     friendDifference: Infinity
+// };
 
-var userData = req.body;
+// var userData = req.body;
 
-var userScores = userData.scores;
+// var userScores = userData.scores;
 
-var totalDifference;
+// var totalDifference;
 
-for (var i = 0; i < friendsArray.length; i++) {
-    var currentFriend = friendsArray[];
-    totalDifference = 0;
-    for (var j = 0; j < currentFriend.scores.length; j++) {
-        var currentFriendScore = currentFriend.scores[j];
-        var currentUserScore = userScores[j];
+// for (var i = 0; i < friendsArray.length; i++) {
+//     var currentFriend = friendsArray;
+//     totalDifference = 0;
+//     for (var j = 0; j < currentFriend.scores.length; j++) {
+//         var currentFriendScore = currentFriend.scores[j];
+//         var currentUserScore = userScores[j];
 
-        totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
-    }
-}
+//         totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
+//     }
+// }
 
-if (totalDifference <= bestMatch.friendDifference) {
-    bestMatch.name = currentFriend.name
-}
+// if (totalDifference <= bestMatch.friendDifference) {
+//     bestMatch.name = currentFriend.name
+// }
 
-friendsArray.push(userData)
+// friendsArray.push(userData)
 
-resizeBy.json(bestMatch)
+// resizeBy.json(bestMatch)

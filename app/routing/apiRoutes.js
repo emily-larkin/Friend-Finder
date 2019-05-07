@@ -1,5 +1,4 @@
 var path = require("path");
-var friendData = require("../data/friends.js");
 
 module.exports = function (app) {
 
